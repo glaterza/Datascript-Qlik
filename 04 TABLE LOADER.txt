@@ -1,0 +1,12 @@
+sub table_loader (S_TABLA,S_KEY)
+
+	$(S_TABLA):
+	SQL SELECT $(S_TABLA).*, 
+	$(S_KEY) AS KEY_INCREMENTAL
+	FROM //$(S_PROCESO).
+	$(S_TABLA);
+
+	STORE $(S_TABLA) INTO ..\QVD\$(S_ETAPA)_$(S_MODULO)_$(S_TABLA).qvd (QVD);
+	DROP TABLE $(S_TABLA);
+
+end sub

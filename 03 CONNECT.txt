@@ -1,0 +1,7 @@
+/******Se establece la conexión con la BD******/
+
+$(MUST_INCLUDE=..\CFG\CONFIG.TXT);
+
+
+
+

@@ -1,0 +1,7 @@
+/*********************Inicio del Script*********************/
+TEMPLATE:
+LOAD
+	NOW() 				AS TEMPLATE.INICIO,
+	OSUSER()			AS TEMPLATE.USUARIO
+AUTOGENERATE 1;
+

@@ -1,0 +1,9 @@
+TABLAS:	
+LOAD TABLA, 
+     NOMBRE_CORTO, 
+     MALLA, 
+     KEY_INCREMENTAL, 
+     FLAG_INC
+FROM
+[..\CFG\FUENTE_DE_DATOS.xlsx]
+(ooxml, embedded labels, table is Checklist);

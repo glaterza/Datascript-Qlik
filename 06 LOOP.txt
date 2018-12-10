@@ -1,0 +1,15 @@
+LET i=1;
+SET v_Control = 2;
+LET i_TABLA = FieldValue('TABLA',i);
+//LET i_MALLA = FieldValue('MALLA',i);
+LET i_KEY = FieldValue('KEY_INCREMENTAL',i);
+
+do while v_Control>1
+	CALL table_loader('$(i_TABLA)','$(i_KEY)'); //,'$(i_MALLA)'
+	LET i=i+1;
+	LET i_TABLA = FieldValue('TABLA',i);
+//	LET i_MALLA = FieldValue('MALLA',i);
+	LET i_KEY = FieldValue('KEY_INCREMENTAL',i);
+	LET v_Control = LEN('$(i_TABLA)')+1;	
+loop 
+

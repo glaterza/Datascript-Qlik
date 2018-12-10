@@ -1,0 +1,4 @@
+// Desconectar de la BD
+DISCONNECT;
+
+SET v_MALLA = 1;
