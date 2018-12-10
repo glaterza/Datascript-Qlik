@@ -1,0 +1,17 @@
+﻿LET S_MODULO = 'MODULE_NAME';
+LET S_ETAPA = 'DATA';
+LET S_PROCESO = subfield(DocumentName(),'_',SubStringCount(DocumentName(),'_')+1);
+LET S_PROCESO = REPLACE(CAPITALIZE('$(S_PROCESO)'),'.Qvw','');
+
+ IF ComputerName() = 'QlikDev' THEN
+ 	LET S_CONEXION = '$(S_PROCESO)_D';
+ ELSE 
+ 	LET S_CONEXION = '$(S_PROCESO)';
+ ENDIF;
+
+ODBC CONNECT TO [DATABASE;DBQ=srv_DATABASE.SERVER] (XUserId is USERIDHASHED, XPassword is PASSWORDHASHED);
+
+// Periodo de Carga Incremental
+LET vDias = 120;
+LET vHistoriaAnios = 2;
+
